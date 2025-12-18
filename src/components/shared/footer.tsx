@@ -8,7 +8,7 @@ const Footer = () => {
         <img
           src="/logo-text-lg.svg"
           alt="PropTryx background"
-          className="w-full md:w-[90%] lg:w-[75%] h-auto object-contain select-none pointer-events-none"
+          className="w-full md:w-[90%] lg:w-[75%] 2xl:w-[65%] h-auto object-contain select-none pointer-events-none"
           loading="lazy"
         />
       </div>

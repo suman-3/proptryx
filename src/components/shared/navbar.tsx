@@ -1,4 +1,4 @@
-import { Link, NavLink, useLocation } from "react-router-dom";
+import { Link, NavLink, useLocation, useNavigate } from "react-router-dom";
 import { NavmenuItems } from "../../constants/navmenu";
 import { Button } from "../ui/button";
 import Logo from "./logo";
@@ -25,9 +25,36 @@ const NavContent = ({
   isScrolled?: boolean;
   showHome?: boolean;
 }) => {
+  const location = useLocation();
+  const navigate = useNavigate();
   const items = showHome
     ? [{ title: "Home", path: "/" }, ...NavmenuItems]
     : NavmenuItems;
+
+  const handleNavClick = (e: React.MouseEvent, path: string) => {
+    // Check if path contains hash
+    if (path.includes("#")) {
+      e.preventDefault();
+
+      const [pathname, hash] = path.split("#");
+      const targetPath = pathname || "/";
+
+      // If we're already on the target page, just scroll
+      if (location.pathname === targetPath) {
+        const element = document.getElementById(hash);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      } else {
+        // Navigate to page with hash
+        navigate(`${targetPath}#${hash}`);
+      }
+
+      if (closeSheet) {
+        closeSheet();
+      }
+    }
+  };
 
   return (
     <section className="flex h-full flex-col gap-6 pt-7">
@@ -40,7 +67,7 @@ const NavContent = ({
                 className={`text-[1.1em] navlink hover:opacity-90 font-spaceGrotesk transition relative font-medium list-none ${
                   isScrolled ? "text-black" : "text-white"
                 }`}
-                onClick={closeSheet}
+                onClick={(e) => handleNavClick(e, item.path)}
               >
                 {item.title}
               </NavLink>
@@ -59,23 +86,40 @@ const Navbar = () => {
   // Check if current path should have transparent background
   const shouldBeTransparent = TRANSPARENT_BG_PATHS.includes(location.pathname);
 
-  // Handle scroll to top on route change and hash navigation
+  // Handle scroll to hash element
   useEffect(() => {
     const { hash } = location;
 
     if (hash) {
-      // If there's a hash, scroll to that element
-      setTimeout(() => {
-        const element = document.querySelector(hash);
+      // Remove the '#' symbol
+      const id = hash.replace("#", "");
+
+      // Function to scroll to element with retry
+      const scrollToElement = (attempt = 0) => {
+        const element = document.getElementById(id);
+
         if (element) {
-          element.scrollIntoView({ behavior: "smooth", block: "start" });
+          // Add small delay to ensure page is rendered
+          setTimeout(() => {
+            element.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
+            });
+          }, 100);
+        } else if (attempt < 10) {
+          // Retry after 200ms if element not found
+          setTimeout(() => {
+            scrollToElement(attempt + 1);
+          }, 200);
         }
-      }, 0);
+      };
+
+      scrollToElement();
     } else {
       // No hash, scroll to top
       window.scrollTo({ top: 0, left: 0, behavior: "instant" });
     }
-  }, [location]);
+  }, [location.pathname, location.hash]);
 
   useEffect(() => {
     const handleScroll = () => {

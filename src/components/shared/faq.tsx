@@ -26,7 +26,7 @@ export function FaqSection() {
 
         <Link to="/contact" className="mt-2 md:mt-4 w-full">
           <Button
-            className="flex items-center gap-2 px-6 w-full"
+            className="flex items-center gap-2 px-6 w-full md:w-fit"
             size="default"
             variant="black"
           >

@@ -98,14 +98,14 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`w-full h-16 md:h-20 flex items-center justify-between px-5 md:px-10 lg:px-14 fixed top-0 z-50 2xl:px-64 transition-all duration-300 ${
+      className={`w-full h-20 flex items-center justify-between px-5 md:px-10 lg:px-14 fixed top-0 z-50 2xl:px-64 transition-all duration-300 ${
         hasWhiteBg ? "bg-white shadow-sm" : "bg-transparent"
       }`}
     >
       <div className="flex items-center gap-2">
         <Logo
           path={hasWhiteBg ? "/logo-b-b.png" : "/logo-b-w.png"}
-          className="!w-44 md:!w-56"
+          className="!w-56"
         />
       </div>
 
@@ -138,7 +138,7 @@ const Navbar = () => {
             className="background-light900_dark200 border-none flex flex-col gap-2 max-w-[80vw]"
           >
             <div className="flex flex-col space-y-6">
-              <Logo path={"/logo-b-b.png"} className="!w-48" />
+              <Logo path={"/logo-b-b.png"} className="!w-56" />
               <NavContent isScrolled={true} showHome={true} />
               <SheetClose asChild>
                 <Button variant={"black"} className="font-medium" asChild>

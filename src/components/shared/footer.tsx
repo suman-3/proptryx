@@ -8,19 +8,16 @@ const Footer = () => {
         <img
           src="/logo-text-lg.svg"
           alt="PropTryx background"
-          className="w-full md:w-[90%] lg:w-[75%] h-auto object-contain"
+          className="w-full md:w-[90%] lg:w-[75%] h-auto object-contain select-none pointer-events-none"
           loading="lazy"
         />
       </div>
 
-      <div className="mx-auto flex flex-col justify-between min-h-[35vh] md:min-h-[40vh] lg:min-h-[46vh] py-8 md:py-10 lg:py-12 relative z-10">
+      <div className="mx-auto flex flex-col justify-between min-h-[30vh] md:min-h-[40vh] lg:min-h-[46vh] py-8 md:py-10 lg:py-12 relative z-10">
         {/* Top Section - Logo & Powered By */}
         <div className="flex flex-col md:flex-row gap-6 md:gap-10 justify-between items-start md:items-start px-6 md:px-14 2xl:px-64">
           <div className="flex items-center justify-start w-full md:w-auto">
-            <Logo
-              path={"/logo-b-b.png"}
-              className="!w-40 md:!w-48 lg:!w-56 h-auto"
-            />
+            <Logo path={"/logo-b-b.png"} className="!w-56 h-auto" />
           </div>
 
           <div className="flex items-center md:self-center">
@@ -39,7 +36,7 @@ const Footer = () => {
         </div>
 
         {/* Bottom Section - Copyright & Social */}
-        <div className="flex flex-col md:flex-row gap-4 md:gap-6 items-center justify-center px-6 md:px-14 2xl:px-64 mt-auto">
+        <div className="flex flex-col md:flex-row gap-4 md:gap-6 items-center justify-center px-6 md:px-14 2xl:px-64 mt-10 -mb-5">
           <p className="text-xs md:text-sm lg:text-base font-normal font-manrope text-black/80 text-center leading-relaxed">
             © 2025 PropTryx. All rights reserved.
           </p>

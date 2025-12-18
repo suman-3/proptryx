@@ -10,7 +10,7 @@ export const Hero = () => {
         <div className="w-full md:w-[80%] px-6 md:pl-14 2xl:pl-64 flex items-center justify-center min-h-svh md:min-h-0 mt-4 md:mt-2">
           <div className="w-full flex flex-col items-center md:items-start justify-center space-y-5 md:space-y-6 py-8 md:py-0">
             <BlurFade delay={0.2} inView>
-              <h1 className="text-sm md:text-lg w-full leading-6 md:leading-[68px] tracking-wide text-white font-manrope text-center md:text-left">
+              <h1 className="text-[12px] md:text-lg w-full leading-6 md:leading-[68px] tracking-wide text-white font-manrope text-center md:text-left">
                 Smart Search &nbsp; | &nbsp; Verified Listings &nbsp; | &nbsp;
                 Secure Docs
               </h1>

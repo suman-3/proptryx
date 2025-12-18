@@ -60,7 +60,7 @@ export const ContactForm = () => {
     <div className="w-full h-full bg-gray">
       <div className="w-full flex flex-col lg:flex-row min-h-svh lg:min-h-lvh px-6 md:px-14 2xl:px-64 pt-20 md:pt-28 lg:pt-32 pb-10 md:pb-16 gap-8 lg:gap-12">
         {/* Left Column - Contact Info */}
-        <div className="w-full lg:w-3/5 flex flex-col justify-center mt-3 md:mt-0">
+        <div className="w-full lg:w-3/5 flex flex-col justify-center mt-6 md:mt-0">
           <div className="w-full flex flex-col items-start space-y-2 md:space-y-5">
             <BlurFade delay={0.2} inView>
               <h1 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-medium w-full leading-tight md:leading-snug lg:leading-[70px] tracking-wide text-black font-spaceGrotesk">

@@ -143,7 +143,7 @@ export const ContactForm = () => {
           <Form {...form}>
             <form
               onSubmit={form.handleSubmit(onSubmit)}
-              className="flex flex-col gap-4 w-full bg-white py-4 px-6 rounded-sm shadow-sm"
+              className="flex flex-col gap-4 w-full bg-white py-4 px-6 rounded-xs shadow-sm"
             >
               <FormField
                 control={form.control}

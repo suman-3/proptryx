@@ -25,7 +25,7 @@ const Footer = () => {
         <div className="mx-auto flex flex-col justify-between mt-4 min-h-[46vh] py-4 relative z-10">
           <div className="flex gap-10 justify-between items-start px-14 2xl:px-64">
             <div>
-              <Logo path={"/logo-b-b.png"} className="!w-40 md:!w-64" />
+              <Logo path={"/logo-b-b.png"} className="!w-40 md:!w-56" />
             </div>
             <h1 className="w-fit text-md font-manrope text-black">
               Powered by{" "}

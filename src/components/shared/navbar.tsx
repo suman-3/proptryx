@@ -32,7 +32,7 @@ const NavContent = ({
               <NavLink
                 to={item.path}
                 className={`text-[1.1em] navlink hover:opacity-90 transition relative font-medium list-none ${
-                  isScrolled ? "text-black" : ""
+                  isScrolled ? "text-black" : "text-white"
                 }`}
                 onClick={closeSheet}
               >
@@ -99,7 +99,7 @@ const Navbar = () => {
       <div className="flex items-center gap-2">
         <Logo
           path={hasWhiteBg ? "/logo-b-b.png" : "/logo-b-w.png"}
-          className="!w-40 md:!w-64"
+          className="!w-40 md:!w-56"
         />
       </div>
 

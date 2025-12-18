@@ -79,10 +79,19 @@ input[type="number"]::-webkit-outer-spin-button {
   background-position: center;
   overflow: hidden;
 }
+.about-bg {
+  background-image: url("/about/hero-bg.webp");
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
 
 @media (max-width: 767px) {
   .hero-bg {
     background-image: url("/home/hero-bg-mobile.webp");
+  }
+  .about-bg {
+    background-image: url("/about/hero-bg-mobile.webp");
   }
 }
 @keyframes logo-cloud {

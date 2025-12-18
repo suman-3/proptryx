@@ -3,7 +3,7 @@ import { Button } from "../ui/button";
 
 export const CtaSection = () => {
   return (
-    <div className="w-full h-full bg-transparent flex flex-col space-y-6 items-center justify-start relative overflow-hidden py-8 md:py-10 max-w-screen-2xl mx-auto px-6 md:px-14 2xl:px-64">
+    <div className="w-full h-full bg-transparent flex flex-col space-y-6 items-center justify-start relative overflow-hidden py-8 md:py-10 max-w-screen-2xl mx-auto px-6 md:px-14 2xl:px-64 md:mb-6">
       <div className="w-full bg-gray z-10 relative px-4 md:px-16 h-[160px] md:h-[300px] object-contain">
         <div className="absolute top-4 md:top-12 left-0 flex flex-col items-center justify-center w-full md:gap-3 mt-2 md:mt-4">
           <h1 className="text-[14px] md:text-4xl text-black font-medium font-spaceGrotesk text-center">

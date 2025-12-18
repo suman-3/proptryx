@@ -15,7 +15,7 @@ export const Hero = () => {
               </h1>
             </BlurFade>
             <BlurFade delay={0.2} inView>
-              <h1 className="text-xl md:text-4xl lg:text-5xl font-medium w-full leading-9 md:leading-[70px] tracking-wide mb-2 text-white font-spaceGrotesk">
+              <h1 className="text-xl md:text-4xl capitalize lg:text-5xl font-medium w-full leading-9 md:leading-[70px] tracking-wide mb-2 text-white font-spaceGrotesk">
                 Find the right commercial <br /> property faster & with
                 confidence
               </h1>

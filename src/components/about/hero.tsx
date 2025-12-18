@@ -38,7 +38,7 @@ export const Hero = () => {
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 md:gap-4 w-full sm:w-auto pt-2 md:pt-0">
               <BlurFade delay={0.3} inView className="w-full sm:w-auto">
                 <Link
-                  to={"/"}
+                  to="https://app.proptryx.com"
                   target="_blank"
                   className="w-full sm:w-auto block"
                 >

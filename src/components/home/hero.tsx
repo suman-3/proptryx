@@ -34,7 +34,7 @@ export const Hero = () => {
 
             <BlurFade delay={0.3} inView>
               <div className="w-full flex justify-center md:justify-start">
-                <Link to={"/"} target="_blank">
+                <Link to="https://app.proptryx.com" target="_blank">
                   <Button className="hover:opacity-90 transition mt-2 md:mt-4 text-base md:text-lg px-8">
                     Request Demo
                   </Button>

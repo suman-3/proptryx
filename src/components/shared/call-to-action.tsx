@@ -17,7 +17,11 @@ export const CtaSection = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row items-center gap-3 md:gap-4 w-full sm:w-auto mt-2 md:mt-0">
-            <Link to="/demo" className="w-full sm:w-auto">
+            <Link
+              to="https://app.proptryx.com"
+              className="w-full sm:w-auto"
+              target="_blank"
+            >
               <Button
                 className="w-full sm:w-auto flex items-center justify-center gap-2 px-6 md:px-8"
                 size="default"

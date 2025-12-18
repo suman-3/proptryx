@@ -65,7 +65,7 @@ const Feature = ({
       className={cn(
         "flex flex-col shrink-0 py-6 md:py-10 relative group/feature border-b md:border-b-0",
         // Desktop borders (3 columns)
-        "lg:border-r",
+        "lg:border-r lg:last:border-r",
         (index === 0 || index === 3) && "lg:border-l dark:border-neutral-800",
         index < 3 && "lg:border-b dark:border-neutral-800",
         // Tablet borders (2 columns)

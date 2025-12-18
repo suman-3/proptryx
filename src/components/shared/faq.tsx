@@ -12,33 +12,42 @@ export function FaqSection() {
   return (
     <div
       id="faq"
-      className="w-full h-full mt-2 py-6 px-6 md:px-14 2xl:px-64 flex flex-col md:flex-row md:justify-between"
+      className="w-full h-full mt-2 py-4 md:py-10 px-6 md:px-14 2xl:px-64 flex flex-col md:flex-row md:gap-8 lg:gap-12"
     >
-      <div className="w-full md:w-1/2 flex flex-col items-start gap-4 mt-4">
-        <h1 className="text-[14px] md:text-4xl text-black font-medium font-spaceGrotesk">
+      {/* Left Column - Header & CTA */}
+      <div className="w-full md:w-[45%] lg:w-[40%] flex flex-col items-start gap-3 md:gap-4 mb-6 md:mb-0 md:sticky md:top-24 md:self-start">
+        <h1 className="text-2xl md:text-3xl lg:text-4xl text-black font-medium font-spaceGrotesk leading-tight md:leading-snug">
           Frequently Asked <br /> Questions
         </h1>
-        <p className="text-[14px] hidden md:inline-block md:text-[17px] text-dull md:tracking-wide w-full md:w-[80%] font-manrope">
+
+        <p className="text-sm md:text-base lg:text-[17px] text-dull md:tracking-wide w-full md:w-[90%] font-manrope leading-relaxed">
           Everything you need to know about PropTryx
         </p>
-        <Link to="/contact">
+
+        <Link to="/contact" className="mt-2 md:mt-4 w-full">
           <Button
-            className="flex items-center gap-1 mt-4"
-            size="sm"
-            variant={"black"}
+            className="flex items-center gap-2 px-6 w-full"
+            size="default"
+            variant="black"
           >
             Contact Us
           </Button>
         </Link>
       </div>
-      <div className="w-[92%] md:w-[60%] h-full flex items-center justify-center flex-col pb-4 md:pb-6">
-        <Accordion type="single" collapsible className="w-full">
+
+      {/* Right Column - Accordion */}
+      <div className="w-full md:w-[55%] lg:w-[60%] h-full flex items-start justify-center flex-col">
+        <Accordion type="single" collapsible className="w-full space-y-2">
           {FaqData.map((item, index) => (
-            <AccordionItem key={index} value={`item-${index}`}>
-              <AccordionTrigger className="text-left text-md font-spaceGrotesk">
+            <AccordionItem
+              key={index}
+              value={`item-${index}`}
+              className="border border-neutral-200 rounded-xs px-4 md:px-5 transition-all"
+            >
+              <AccordionTrigger className="text-left text-sm md:text-base lg:text-md font-spaceGrotesk py-4 md:py-5 hover:no-underline">
                 {item.title}
               </AccordionTrigger>
-              <AccordionContent className="text-sm text-dull font-manrope tracking-wide">
+              <AccordionContent className="text-sm md:text-base text-dull font-manrope leading-relaxed md:tracking-wide pb-4">
                 {item.content}
               </AccordionContent>
             </AccordionItem>

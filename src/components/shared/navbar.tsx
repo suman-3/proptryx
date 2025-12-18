@@ -19,19 +19,25 @@ const TRANSPARENT_BG_PATHS = ["/", "/home", "/about"];
 const NavContent = ({
   closeSheet,
   isScrolled,
+  showHome,
 }: {
-  closeSheet?: any;
+  closeSheet?: () => void;
   isScrolled?: boolean;
+  showHome?: boolean;
 }) => {
+  const items = showHome
+    ? [{ title: "Home", path: "/" }, ...NavmenuItems]
+    : NavmenuItems;
+
   return (
     <section className="flex h-full flex-col gap-6 pt-7">
-      {NavmenuItems.map((item, index) => (
+      {items.map((item, index) => (
         <ul key={index}>
           <li>
             <SheetClose asChild>
               <NavLink
                 to={item.path}
-                className={`text-[1.1em] navlink hover:opacity-90 transition relative font-medium list-none ${
+                className={`text-[1.1em] navlink hover:opacity-90 font-spaceGrotesk transition relative font-medium list-none ${
                   isScrolled ? "text-black" : "text-white"
                 }`}
                 onClick={closeSheet}
@@ -92,14 +98,14 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`w-full h-10 md:h-20 flex items-center justify-between px-5 md:px-10 lg:px-14 fixed top-0 z-50 2xl:px-64 transition-all duration-300 ${
+      className={`w-full h-16 md:h-20 flex items-center justify-between px-5 md:px-10 lg:px-14 fixed top-0 z-50 2xl:px-64 transition-all duration-300 ${
         hasWhiteBg ? "bg-white shadow-sm" : "bg-transparent"
       }`}
     >
       <div className="flex items-center gap-2">
         <Logo
           path={hasWhiteBg ? "/logo-b-b.png" : "/logo-b-w.png"}
-          className="!w-40 md:!w-56"
+          className="!w-44 md:!w-56"
         />
       </div>
 
@@ -108,7 +114,7 @@ const Navbar = () => {
 
         <Button
           className={cn(
-            "font-medium",
+            "font-medium hidden md:block",
             hasWhiteBg &&
               "bg-black text-white hover:bg-black/90 hover:opacity-90"
           )}
@@ -123,7 +129,7 @@ const Navbar = () => {
           <SheetTrigger asChild>
             <AlignJustify
               className={`size-6 shrink-0 mt-2 ${
-                hasWhiteBg ? "text-black" : ""
+                hasWhiteBg ? "text-black" : "text-white"
               }`}
             />
           </SheetTrigger>
@@ -131,11 +137,11 @@ const Navbar = () => {
             side="left"
             className="background-light900_dark200 border-none flex flex-col gap-2 max-w-[80vw]"
           >
-            <div className="flex flex-col space-y-10">
-              <Logo path={hasWhiteBg ? "/logo-b-b.png" : "/logo-b-w.png"} />
-              <NavContent isScrolled={true} />
+            <div className="flex flex-col space-y-6">
+              <Logo path={"/logo-b-b.png"} className="!w-48" />
+              <NavContent isScrolled={true} showHome={true} />
               <SheetClose asChild>
-                <Button className="font-medium" asChild>
+                <Button variant={"black"} className="font-medium" asChild>
                   <Link to="/contact">Contact Us</Link>
                 </Button>
               </SheetClose>

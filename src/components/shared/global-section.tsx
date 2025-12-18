@@ -28,7 +28,7 @@ export const GlobalSection = ({
   return (
     <div
       className={cn(
-        "w-full h-full -py-3 md:py-10 md:pl-10 2xl:px-64",
+        "w-full h-full py-3 md:py-10 md:pl-10 2xl:px-64",
         bgReverted && "bg-gray"
       )}
     >

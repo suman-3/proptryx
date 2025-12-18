@@ -9,7 +9,7 @@ function About() {
     <MaxWrapper>
       <Hero />
       <ForOwners />
-      <GlobalSection
+      {/* <GlobalSection
         bgReverted
         title="About Us"
         description="PropTryx is a digital platform that makes discovering and evaluating commercial properties smarter and effortlessly clear. It brings real estate stakeholders such as occupiers, tenants, developers and property owners, in one reliable space where you can explore properties, compare locations, and review essential documents with clarity."
@@ -21,7 +21,7 @@ function About() {
         description="PropTryx streamlines the journey for both property developers and occupiers, with smart search tools, verified listings, secure document access and immersive virtual tours."
         image="/about/sections/2.png"
         flexDirection="flex-col md:flex-row"
-      />
+      /> */}
       <GlobalSection
         bgReverted
         title="How We Do It"

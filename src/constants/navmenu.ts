@@ -6,7 +6,7 @@ export const NavmenuItems = [
   },
   {
     title: "FAQ",
-    path: "#faq",
+    path: "/#faq",
     dropdown: false,
   },
 ];

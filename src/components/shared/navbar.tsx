@@ -2,12 +2,7 @@ import { Link, NavLink, useLocation, useNavigate } from "react-router-dom";
 import { NavmenuItems } from "../../constants/navmenu";
 import { Button } from "../ui/button";
 import Logo from "./logo";
-import {
-  Sheet,
-  SheetClose,
-  SheetContent,
-  SheetTrigger,
-} from "../../components/ui/sheet";
+import { Sheet, SheetContent, SheetTrigger } from "../../components/ui/sheet";
 import { AlignJustify } from "lucide-react";
 import { NavigationMenuDropDown } from "./nav-drop-down";
 import { useState, useEffect } from "react";
@@ -39,17 +34,26 @@ const NavContent = ({
       const [pathname, hash] = path.split("#");
       const targetPath = pathname || "/";
 
-      // If we're already on the target page, just scroll
-      if (location.pathname === targetPath) {
-        const element = document.getElementById(hash);
-        if (element) {
-          element.scrollIntoView({ behavior: "smooth", block: "start" });
-        }
-      } else {
-        // Navigate to page with hash
-        navigate(`${targetPath}#${hash}`);
+      // Close sheet first
+      if (closeSheet) {
+        closeSheet();
       }
 
+      // Small delay to allow sheet to close
+      setTimeout(() => {
+        // If we're already on the target page, just scroll
+        if (location.pathname === targetPath) {
+          const element = document.getElementById(hash);
+          if (element) {
+            element.scrollIntoView({ behavior: "smooth", block: "start" });
+          }
+        } else {
+          // Navigate to page with hash
+          navigate(`${targetPath}#${hash}`);
+        }
+      }, 100);
+    } else {
+      // Close sheet for regular navigation
       if (closeSheet) {
         closeSheet();
       }
@@ -61,17 +65,15 @@ const NavContent = ({
       {items.map((item, index) => (
         <ul key={index}>
           <li>
-            <SheetClose asChild>
-              <NavLink
-                to={item.path}
-                className={`text-[1.1em] navlink hover:opacity-90 font-spaceGrotesk transition relative font-medium list-none ${
-                  isScrolled ? "text-black" : "text-white"
-                }`}
-                onClick={(e) => handleNavClick(e, item.path)}
-              >
-                {item.title}
-              </NavLink>
-            </SheetClose>
+            <NavLink
+              to={item.path}
+              className={`text-[1.1em] navlink hover:opacity-90 font-spaceGrotesk transition relative font-medium list-none ${
+                isScrolled ? "text-black" : "text-white"
+              }`}
+              onClick={(e) => handleNavClick(e, item.path)}
+            >
+              {item.title}
+            </NavLink>
           </li>
         </ul>
       ))}
@@ -81,10 +83,16 @@ const NavContent = ({
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isSheetOpen, setIsSheetOpen] = useState(false);
   const location = useLocation();
 
   // Check if current path should have transparent background
   const shouldBeTransparent = TRANSPARENT_BG_PATHS.includes(location.pathname);
+
+  // Close sheet on route change
+  useEffect(() => {
+    setIsSheetOpen(false);
+  }, [location.pathname]);
 
   // Handle scroll to hash element
   useEffect(() => {
@@ -169,13 +177,15 @@ const Navbar = () => {
       </div>
 
       <div className="md:hidden">
-        <Sheet>
+        <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
           <SheetTrigger asChild>
-            <AlignJustify
-              className={`size-6 shrink-0 mt-2 ${
-                hasWhiteBg ? "text-black" : "text-white"
-              }`}
-            />
+            <button className="focus:outline-none" aria-label="Open menu">
+              <AlignJustify
+                className={`size-6 shrink-0 mt-2 ${
+                  hasWhiteBg ? "text-black" : "text-white"
+                }`}
+              />
+            </button>
           </SheetTrigger>
           <SheetContent
             side="left"
@@ -183,12 +193,19 @@ const Navbar = () => {
           >
             <div className="flex flex-col space-y-6">
               <Logo path={"/logo-b-b.png"} className="!w-56" />
-              <NavContent isScrolled={true} showHome={true} />
-              <SheetClose asChild>
-                <Button variant={"black"} className="font-medium" asChild>
-                  <Link to="/contact">Contact Us</Link>
-                </Button>
-              </SheetClose>
+              <NavContent
+                isScrolled={true}
+                showHome={true}
+                closeSheet={() => setIsSheetOpen(false)}
+              />
+              <Button
+                variant="black"
+                className="font-medium"
+                asChild
+                onClick={() => setIsSheetOpen(false)}
+              >
+                <Link to="/contact">Contact Us</Link>
+              </Button>
             </div>
           </SheetContent>
         </Sheet>

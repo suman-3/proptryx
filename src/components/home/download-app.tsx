@@ -9,7 +9,7 @@ import { Button } from '../ui/button';
 
 const cardsData = [
   {
-    title: "Get the Proptrx Occupier App",
+    title: "Get the PropTryx Occupier App",
     description: "Perfect for businesses looking for commercial spaces. Browse verified listings, schedule visits, and manage your property search efficiently.",
     points: [
       "Search & filter properties",
@@ -20,7 +20,7 @@ const cardsData = [
     appType: "OCCUPIER" as const
   },
   {
-    title: "Get the Proptrx Developer App",
+    title: "Get the PropTryx Developer App",
     description: "Built for property owners and developers. List properties, manage inquiries, and close deals faster with our comprehensive tools.",
     points: [
       "List properties easily",

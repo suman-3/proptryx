@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import BlurFade from "../shared/blur-fade";
 import { Button } from "../ui/button";
+import { Download } from "lucide-react";
 
 export const Hero = () => {
   return (
@@ -33,9 +34,22 @@ export const Hero = () => {
             </BlurFade>
 
             <BlurFade delay={0.3} inView>
-              <div className="w-full flex justify-center md:justify-start">
-                <Link to="https://app.proptryx.com" target="_blank">
-                  <Button className="hover:opacity-90 transition mt-2 md:mt-4 text-base md:text-lg px-8">
+              <div className="w-full flex mt-6 md:mt-2 flex-col md:flex-row justify-center md:justify-start gap-2 md:gap-4">
+                <Button
+                  variant={"outline"}
+                  className="hover:opacity-90 transition mt-2 md:mt-4 text-base md:text-lg px-8"
+                  onClick={() => {
+                    document.getElementById('apps')?.scrollIntoView({
+                      behavior: 'smooth',
+                      block: 'start'
+                    });
+                  }}
+                >
+                  Download App <Download className="w-5 h-5 ml-2" />
+                </Button>
+
+                <Link to="https://www.proptryx.app" target="_blank">
+                  <Button className="hover:opacity-90 transition mt-2 md:mt-4 text-base md:text-lg px-8 w-full">
                     Request Demo
                   </Button>
                 </Link>

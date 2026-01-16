@@ -38,7 +38,7 @@ const Footer = () => {
         {/* Bottom Section - Copyright & Social */}
         <div className="flex flex-col md:flex-row gap-4 md:gap-6 items-center justify-center px-6 md:px-14 2xl:px-64 mt-10 -mb-5">
           <p className="text-xs md:text-sm lg:text-base font-normal font-manrope text-black/80 text-center leading-relaxed">
-            © 2025 PropTryx. All rights reserved.
+            © 2026 PropTryx. All rights reserved.
           </p>
 
           {/* Social Links - Uncomment when ready */}

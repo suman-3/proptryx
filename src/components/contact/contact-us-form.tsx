@@ -16,7 +16,7 @@ import { Textarea } from "../ui/textarea";
 import { toast } from "sonner";
 import { Loader } from "lucide-react";
 import BlurFade from "../shared/blur-fade";
-
+import { IconShield } from "@tabler/icons-react";
 const formSchema = z.object({
   name: z.string().min(2, {
     message: "name is required",
@@ -115,6 +115,20 @@ export const ContactForm = () => {
                       className="w-full text-sm md:text-base leading-6 md:leading-[27px] text-black/80 font-manrope hover:underline hover:text-black transition-colors break-all"
                     >
                       info@proptyrx.com
+                    </a>
+                  </div>
+                </div>
+              </BlurFade>
+              <BlurFade delay={0.3} inView>
+                <div className="flex flex-col gap-2">
+                  <p className="w-full text-base md:text-lg lg:text-xl leading-6 md:leading-7 font-medium text-black font-spaceGrotesk">
+                    CIN Number
+                  </p>
+                  <div className="flex gap-2.5 items-start">
+                    <IconShield className="mt-1 size-4 md:size-5 shrink-0" />
+                    <a
+                      className="w-full text-sm md:text-base leading-6 md:leading-[27px] text-black/80 font-manrope hover:underline hover:text-black transition-colors break-all"
+                    >U68100WB2025OPC283070
                     </a>
                   </div>
                 </div>

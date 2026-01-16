@@ -1,3 +1,4 @@
+import DownloadApp from "../components/home/download-app";
 import { Hero } from "../components/home/hero";
 import { WhyChooseUs } from "../components/home/why-choose-us";
 import { CtaSection } from "../components/shared/call-to-action";
@@ -9,6 +10,7 @@ function Home() {
     <MaxWrapper>
       <Hero />
       <WhyChooseUs />
+      <DownloadApp/>
       <CtaSection />
       <FaqSection />
     </MaxWrapper>

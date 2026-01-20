@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+import { Separator } from "../ui/separator";
 import Logo from "./logo";
 
 const Footer = () => {
@@ -20,7 +22,7 @@ const Footer = () => {
             <Logo path={"/logo-b-b.png"} className="!w-56 h-auto" />
           </div>
 
-          <div className="flex items-center md:self-center">
+          <div className="flex items-center md:self-center mt-3 md:mt-0">
             <p className="text-sm md:text-base font-manrope text-black text-left md:text-right">
               Powered by{" "}
               <a
@@ -33,6 +35,18 @@ const Footer = () => {
               </a>
             </p>
           </div>
+          <Link
+            className="font-manrope text-sm md:text-md md:hidden mt-2"
+            to={"/privacy-policy"}
+          >
+            Privacy Policy
+          </Link>
+          <Link
+            className="font-manrope text-sm md:text-md md:hidden -mt-1"
+            to={"/terms-conditions"}
+          >
+            Terms & Conditions
+          </Link>
         </div>
 
         {/* Bottom Section - Copyright & Social */}
@@ -40,37 +54,20 @@ const Footer = () => {
           <p className="text-xs md:text-sm lg:text-base font-normal font-manrope text-black/80 text-center leading-relaxed">
             © 2026 PropTryx. All rights reserved.
           </p>
-
-          {/* Social Links - Uncomment when ready */}
-          {/* <div className="flex items-center gap-4 md:gap-5">
-            <a
-              href="https://twitter.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-black hover:opacity-70 transition-opacity focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2 rounded-full p-1"
-              aria-label="Follow us on Twitter"
-            >
-              <IconBrandTwitter className="size-5 md:size-6 stroke-[1.5px] shrink-0" />
-            </a>
-            <a
-              href="https://facebook.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-black hover:opacity-70 transition-opacity focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2 rounded-full p-1"
-              aria-label="Follow us on Facebook"
-            >
-              <IconBrandFacebook className="size-5 md:size-6 stroke-[1.5px] shrink-0" />
-            </a>
-            <a
-              href="https://instagram.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-black hover:opacity-70 transition-opacity focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2 rounded-full p-1"
-              aria-label="Follow us on Instagram"
-            >
-              <IconBrandInstagram className="size-5 md:size-6" stroke={1.5} />
-            </a>
-          </div> */}
+          <Separator className="bg-dull w-[50%] h-px mt-0.5 hidden md:block" />
+          <Link
+            className="font-manrope text-sm md:text-md hidden md:block"
+            to={"/privacy-policy"}
+          >
+            Privacy Policy
+          </Link>
+          <Separator className="bg-dull w-px h-6 hidden md:block" />
+          <Link
+            className="font-manrope text-sm md:text-md hidden md:block"
+            to={"/terms-conditions"}
+          >
+            Terms & Conditions
+          </Link>
         </div>
       </div>
     </footer>

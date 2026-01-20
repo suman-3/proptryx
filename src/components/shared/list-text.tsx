@@ -1,231 +1,78 @@
+import { cn } from "../../lib/utils";
+
+interface ListItem {
+  text: string;
+  subItems?: string[];
+}
+
 interface ListTextProps {
   title: string;
   description?: string;
-  list1?: string;
-  list2?: string;
-  list3?: string;
-  list4?: string;
-  list5?: string;
-  list6?: string;
-  list7?: string;
-  list8?: string;
-  list9?: string;
-  list10?: string;
-  list11?: string;
-  list12?: string;
-  list13?: string;
-  list14?: string;
-  list15?: string;
-  list16?: string;
-  list17?: string;
-  list18?: string;
-  list19?: string;
-  list20?: string;
+  description1?: string;
+  items?: (string | ListItem)[];
   children?: React.ReactNode;
 }
 
 export const ListTextPrivacy = ({
   title,
   description,
-  list1,
-  list2,
-  list3,
-  list4,
-  list5,
-  list6,
-  list7,
-  list8,
-  list9,
-  list10,
-  list11,
-  list12,
-  list13,
-
-  list14,
-  list15,
-  list16,
-  list17,
-  list18,
-  list19,
-  list20,
-
+  description1,
+  items = [],
   children,
 }: ListTextProps) => {
   return (
     <div className="w-full flex flex-col gap-4 md:gap-6">
       <div className="flex flex-col gap-1">
-        <h1 className="text-2xl md:text-3xl font-semibold w-full  text-start">
+        <h1 className="text-2xl md:text-3xl font-semibold w-full text-start font-spaceGrotesk">
           {title}
         </h1>
         {description && (
-          <p className="text-start w-full font-medium text-sm md:text-[16px] text-gray">
+          <p className="text-start w-full text-sm md:text-[16px] text-dull mt-2 tracking-wider font-manrope">
             {description}
           </p>
         )}
+        {description1 && (
+          <p className="text-start w-full text-sm md:text-[16px] text-dull mt-2 tracking-wider font-manrope">
+            {description1}
+          </p>
+        )}
       </div>
+
       <div className="flex flex-col gap-4">
-        {list1 && (
-          <div className="flex gap-2 items-start">
-            <p className="text-dark text-lg -mt-1">&#x2022;</p>
-            <p className="text-start w-full font-medium text-sm md:text-[16px] text-gray leading-6 tracking-wide">
-              {list1}
-            </p>
-          </div>
-        )}
-        {list2 && (
-          <div className="flex gap-2 items-start">
-            <p className="text-dark text-lg -mt-1">&#x2022;</p>
-            <p className="text-start w-full font-medium text-sm md:text-[16px] text-gray leading-6 tracking-wide">
-              {list2}
-            </p>
-          </div>
-        )}
-        {list3 && (
-          <div className="flex gap-2 items-start">
-            <p className="text-dark text-lg -mt-1">&#x2022;</p>
-            <p className="text-start w-full font-medium text-sm md:text-[16px] text-gray leading-6 tracking-wide">
-              {list3}
-            </p>
-          </div>
-        )}
-        {list4 && (
-          <div className="flex gap-2 items-start">
-            <p className="text-dark text-lg -mt-1">&#x2022;</p>
-            <p className="text-start w-full font-medium text-sm md:text-[16px] text-gray leading-6 tracking-wide">
-              {list4}
-            </p>
-          </div>
-        )}
-        {list5 && (
-          <div className="flex gap-2 items-start">
-            <p className="text-dark text-lg -mt-1">&#x2022;</p>
-            <p className="text-start w-full font-medium text-sm md:text-[16px] text-gray leading-6 tracking-wide">
-              {list5}
-            </p>
-          </div>
-        )}
-        {list6 && (
-          <div className="flex gap-2 items-start">
-            <p className="text-dark text-lg -mt-1">&#x2022;</p>
-            <p className="text-start w-full font-medium text-sm md:text-[16px] text-gray leading-6 tracking-wide">
-              {list6}
-            </p>
-          </div>
-        )}
-        {list7 && (
-          <div className="flex gap-2 items-start">
-            <p className="text-dark text-lg -mt-1">&#x2022;</p>
-            <p className="text-start w-full font-medium text-sm md:text-[16px] text-gray leading-6 tracking-wide">
-              {list7}
-            </p>
-          </div>
-        )}
-        {list8 && (
-          <div className="flex gap-2 items-start">
-            <p className="text-dark text-lg -mt-1">&#x2022;</p>
-            <p className="text-start w-full font-medium text-sm md:text-[16px] text-gray leading-6 tracking-wide">
-              {list8}
-            </p>
-          </div>
-        )}
-        {list9 && (
-          <div className="flex gap-2 items-start">
-            <p className="text-dark text-lg -mt-1">&#x2022;</p>
-            <p className="text-start w-full font-medium text-sm md:text-[16px] text-gray leading-6 tracking-wide">
-              {list9}
-            </p>
-          </div>
-        )}
-        {list10 && (
-          <div className="flex gap-2 items-start">
-            <p className="text-dark text-lg -mt-1">&#x2022;</p>
-            <p className="text-start w-full font-medium text-sm md:text-[16px] text-gray leading-6 tracking-wide">
-              {list10}
-            </p>
-          </div>
-        )}
-        {list11 && (
-          <div className="flex gap-2 items-start">
-            <p className="text-dark text-lg -mt-1">&#x2022;</p>
-            <p className="text-start w-full font-medium text-sm md:text-[16px] text-gray leading-6 tracking-wide">
-              {list11}
-            </p>
-          </div>
-        )}
-        {list12 && (
-          <div className="flex gap-2 items-start">
-            <p className="text-dark text-lg -mt-1">&#x2022;</p>
-            <p className="text-start w-full font-medium text-sm md:text-[16px] text-gray leading-6 tracking-wide">
-              {list12}
-            </p>
-          </div>
-        )}
-        {list13 && (
-          <div className="flex gap-2 items-start">
-            <p className="text-dark text-lg -mt-1">&#x2022;</p>
-            <p className="text-start w-full font-medium text-sm md:text-[16px] text-gray leading-6 tracking-wide">
-              {list13}
-            </p>
-          </div>
-        )}
-        {list14 && (
-          <div className="flex gap-2 items-start">
-            <p className="text-dark text-lg -mt-1">&#x2022;</p>
-            <p className="text-start w-full font-medium text-sm md:text-[16px] text-gray leading-6 tracking-wide">
-              {list14}
-            </p>
-          </div>
-        )}
-        {list15 && (
-          <div className="flex gap-2 items-start">
-            <p className="text-dark text-lg -mt-1">&#x2022;</p>
-            <p className="text-start w-full font-medium text-sm md:text-[16px] text-gray leading-6 tracking-wide">
-              {list15}
-            </p>
-          </div>
-        )}
-        {list16 && (
-          <div className="flex gap-2 items-start">
-            <p className="text-dark text-lg -mt-1">&#x2022;</p>
-            <p className="text-start w-full font-medium text-sm md:text-[16px] text-gray leading-6 tracking-wide">
-              {list16}
-            </p>
-          </div>
-        )}
-        {list17 && (
-          <div className="flex gap-2 items-start">
-            <p className="text-dark text-lg -mt-1">&#x2022;</p>
-            <p className="text-start w-full font-medium text-sm md:text-[16px] text-gray leading-6 tracking-wide">
-              {list17}
-            </p>
-          </div>
-        )}
-        {list18 && (
-          <div className="flex gap-2 items-start">
-            <p className="text-dark text-lg -mt-1">&#x2022;</p>
-            <p className="text-start w-full font-medium text-sm md:text-[16px] text-gray leading-6 tracking-wide">
-              {list18}
-            </p>
-          </div>
-        )}
-        {list19 && (
-          <div className="flex gap-2 items-start">
-            <p className="text-dark text-lg -mt-1">&#x2022;</p>
-            <p className="text-start w-full font-medium text-sm md:text-[16px] text-gray leading-6 tracking-wide">
-              {list19}
-            </p>
-          </div>
-        )}
-        {list20 && (
-          <div className="flex gap-2 items-start">
-            <p className="text-dark text-lg -mt-1">&#x2022;</p>
-            <p className="text-start w-full font-medium text-sm md:text-[16px] text-gray leading-6 tracking-wide">
-              {list20}
-            </p>
-          </div>
-        )}
+        {items.map((item, index) => {
+          const isListItem = typeof item === 'object' && 'text' in item;
+          const itemText = isListItem ? item.text : item;
+          const subItems = isListItem ? item.subItems : undefined;
+
+          return (
+            <div key={index} className="flex flex-col gap-2">
+              <div className="flex gap-2 items-start">
+                <p className="text-dark text-lg -mt-1">&#x2022;</p>
+                <p className={cn("text-start w-full text-sm md:text-[16px] leading-6 tracking-wide font-manrope",
+                  isListItem ? "text-black font-semibold" : "text-dull"
+                )}>
+                  {itemText}
+                </p>
+              </div>
+
+              {subItems && subItems.length > 0 && (
+                <div className="flex flex-col gap-2 ml-6">
+                  {subItems.map((subItem, subIndex) => (
+                    <div key={subIndex} className="flex gap-2 items-start">
+                      <p className="text-dark text-base -mt-1">◦</p>
+                      <p className="text-start w-full text-sm md:text-[15px] text-dull leading-6 tracking-wide font-manrope">
+                        {subItem}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+          );
+        })}
+
         {children && (
-          <div className="text-start w-full font-medium text-sm md:text-[16px] text-gray leading-6 tracking-wide">
+          <div className="text-start w-full text-sm md:text-[16px] text-dull leading-6 tracking-wide font-manrope">
             {children}
           </div>
         )}

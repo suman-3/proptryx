@@ -20,7 +20,7 @@ export const TermsConditionsPage = () => {
             description="Welcome to PropTryx platform, operated by PropTryx RE OPC Pvt. Ltd. PropTryx is a commercial real estate discovery and listing platform that enables property owners, developers, and authorized agents ('Developers') to showcase commercial properties, and allows buyers, tenants, and users ('occupiers') to search and enquire about such properties."
             items={[
               "By accessing or using PropTryx, you agree to be bound by these Terms & Conditions.",
-              "If you do not agree, please do not use the Platform."
+              "If you do not agree, please do not use the Platform.",
             ]}
           />
 
@@ -32,18 +32,22 @@ export const TermsConditionsPage = () => {
             items={[
               "You must be 18 years or older",
               "You must be legally capable of entering into contracts",
-              "If you are using PropTryx on behalf of an organization, you confirm you are authorized to do so"
+              "If you are using PropTryx on behalf of an organization, you confirm you are authorized to do so",
             ]}
           />
 
           {/* 3. Nature of Platform */}
           <ListTextPrivacy
             title="Nature of Platform"
-            description="PropTryx:"
             items={[
-              "Acts as a technology platform only",
-              "Does not own, sell, lease, or broker properties",
-              "Does not verify ownership, legality, or authenticity of listings or documents",
+              {
+                text: "PropTryx:",
+                subItems: [
+                  "Acts as a technology platform only",
+                  "Does not own, sell, lease, or broker properties",
+                  "Does not verify ownership, legality, or authenticity of listings or documents",
+                ],
+              },
               "All transactions, negotiations, and agreements are conducted directly between Developers and Occupiers."
             ]}
           />
@@ -53,12 +57,16 @@ export const TermsConditionsPage = () => {
           {/* 4. User Accounts */}
           <ListTextPrivacy
             title="User Accounts"
-            description="You agree to:"
             items={[
-              "Provide accurate and current information",
-              "Maintain confidentiality of your login credentials",
-              "Be responsible for all activities under your account",
-              "We reserve the right to suspend or terminate accounts that provide false or misleading information."
+              {
+                text: "You agree to:",
+                subItems: [
+                  "Provide accurate and current information",
+                  "Maintain confidentiality of your login credentials",
+                  "Be responsible for all activities under your account",
+                ],
+              },
+              "We reserve the right to suspend or terminate accounts that provide false or misleading information.",
             ]}
           />
 
@@ -71,16 +79,16 @@ export const TermsConditionsPage = () => {
                 subItems: [
                   "They have legal rights or authorization to list the property",
                   "Uploaded documents, images, and information are accurate and lawful",
-                  "Content does not infringe third-party rights"
-                ]
+                  "Content does not infringe third-party rights",
+                ],
               },
               {
                 text: "Users acknowledge:",
                 subItems: [
                   "Property details are provided by Sellers",
-                  "PropTryx is not responsible for inaccuracies or omissions"
-                ]
-              }
+                  "PropTryx is not responsible for inaccuracies or omissions",
+                ],
+              },
             ]}
           />
 
@@ -94,7 +102,7 @@ export const TermsConditionsPage = () => {
               "Upload false, misleading, or illegal content",
               "Infringe intellectual property rights",
               "Attempt to scrape, reverse-engineer, or misuse the Platform",
-              "Use the Platform for unlawful or fraudulent purposes"
+              "Use the Platform for unlawful or fraudulent purposes",
             ]}
           />
 
@@ -102,18 +110,14 @@ export const TermsConditionsPage = () => {
           <ListTextPrivacy
             title="Intellectual Property"
             description="All Platform software, branding, logos, and design elements belong exclusively to PropTryx RE OPC Pvt. Ltd."
-            items={[
-              "Users retain ownership of content they upload but grant PropTryx a non-exclusive, royalty-free license to display such content on the Platform."
-            ]}
+            description1="Users retain ownership of content they upload but grant PropTryx a non-exclusive, royalty-free license to display such content on the Platform."
           />
 
           {/* 8. Third-Party Links & Services */}
           <ListTextPrivacy
             title="Third-Party Links & Services"
-            items={[
-              "PropTryx may contain links to third-party websites or services.",
-              "We are not responsible for their content, policies, or practices."
-            ]}
+            description="PropTryx may contain links to third-party websites or services. We are not responsible for
+their content, policies, or practices."
           />
 
           <Separator className="bg-dull mt-2" />
@@ -125,7 +129,7 @@ export const TermsConditionsPage = () => {
             items={[
               "PropTryx is provided on an 'as-is' basis",
               "We are not liable for financial losses, disputes, or damages arising from property transactions",
-              "We are not responsible for decisions made based on Platform content"
+              "We are not responsible for decisions made based on Platform content",
             ]}
           />
 
@@ -136,17 +140,15 @@ export const TermsConditionsPage = () => {
             items={[
               "For violation of these Terms",
               "For misuse of the Platform",
-              "If required by law or regulatory authorities"
+              "If required by law or regulatory authorities",
             ]}
           />
 
           {/* 11. Modifications */}
           <ListTextPrivacy
             title="Modifications"
-            items={[
-              "We may update these Terms from time to time.",
-              "Continued use of the App indicates acceptance of updated Terms."
-            ]}
+            description="We may update these Terms from time to time. Continued use of the App indicates
+acceptance of updated Terms."
           />
 
           <Separator className="bg-dull mt-2" />
@@ -154,18 +156,16 @@ export const TermsConditionsPage = () => {
           {/* 12. Governing Law */}
           <ListTextPrivacy
             title="Governing Law"
-            items={[
-              "These Terms are governed by the laws of India, with jurisdiction in [Insert City]."
-            ]}
+            description="These Terms are governed by the laws of India, with jurisdiction in Kolkata, West Bengal."
           />
 
-     <Separator className="bg-dull mt-2" />
+          <Separator className="bg-dull mt-2" />
           {/* 13. Contact */}
           <ListTextPrivacy
             title="Contact"
             items={[
               "Email: support@proptryx.com",
-              "Company: PropTryx RE OPC Pvt. Ltd."
+              "Company: PropTryx RE OPC Pvt. Ltd.",
             ]}
           />
         </div>

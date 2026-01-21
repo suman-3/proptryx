@@ -31,6 +31,7 @@ export const PrivacyPolicyPage = () => {
                                     "Name",
                                     "Email address",
                                     "Phone number",
+                                    "Location data (if enabled)",
                                     "Organization details (if applicable)",
                                 ],
                             },

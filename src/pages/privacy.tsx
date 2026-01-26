@@ -5,7 +5,7 @@ import { Separator } from "../components/ui/separator";
 export const PrivacyPolicyPage = () => {
     return (
         <MaxWrapper>
-            <div className="w-full flex items-center justify-center flex-col gap-5 mt-4 md:mt-20">
+            <div className="w-full flex items-center justify-center flex-col gap-5 mt-24 md:mt-20">
                 <div className="w-full md:w-3/5 h-full pt-4 pb-4 md:py-6 px-4 flex flex-col items-start justify-center gap-5 md:gap-8 md:mt-5">
                     <div className="w-full flex flex-col gap-4 md:gap-6">
                         <h1 className="text-3xl font-spaceGrotesk md:text-[48px] font-bold w-full text-start">

@@ -88,12 +88,21 @@ export const ContactForm = () => {
                       alt="phone icon"
                       className="mt-1 size-4 md:size-5 shrink-0"
                     />
-                    <a
-                      href="tel:+917044454300"
-                      className="w-full text-sm md:text-base leading-6 md:leading-[27px] text-black/80 font-manrope hover:underline hover:text-black transition-colors"
-                    >
-                      +91 70444 54300
-                    </a>
+                    <div className="flex items-center gap-4 whitespace-nowrap">
+                      <a
+                        href="tel:+917044454300"
+                        className="text-sm md:text-base leading-6 md:leading-[27px] text-black/80 font-manrope hover:underline hover:text-black transition-colors"
+                      >
+                        +91 70444 54300
+                      </a>
+                      <span className="text-black">/</span>
+                      <a
+                        href="tel:+919073977386"
+                        className="text-sm md:text-base leading-6 md:leading-[27px] text-black/80 font-manrope hover:underline hover:text-black transition-colors"
+                      >
+                        +91 90739 77386
+                      </a>
+                    </div>
                   </div>
                 </div>
               </BlurFade>

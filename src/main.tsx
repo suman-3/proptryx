@@ -5,7 +5,7 @@ import { HashRouter } from "react-router-dom";
 import Navbar from "./components/shared/navbar";
 import Footer from "./components/shared/footer";
 import { Toaster } from "./components/ui/sonner";
-import { Analytics } from "@vercel/analytics/react";
+
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <HashRouter>
@@ -13,7 +13,6 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
       <Navbar />
       <App />
       <Footer />
-      <Analytics />
       <Toaster richColors />
     </main>
   </HashRouter>

@@ -1,10 +1,8 @@
 'use client';
 
-import { useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '../ui/card';
-import appDownloadServices from '../../services/app-links';
 import { toast } from 'sonner';
-import { Download, Loader2 } from 'lucide-react';
+import { Download } from 'lucide-react';
 import { Button } from '../ui/button';
 
 const cardsData = [
@@ -17,7 +15,8 @@ const cardsData = [
       "Save favorites & compare",
       "Direct communication"
     ],
-    appType: "OCCUPIER" as const
+    appType: "OCCUPIER" as const,
+    link: "https://play.google.com/store/apps/details?id=com.occupier.proptryx_occupier&hl=en_IN"
   },
   {
     title: "Get the PropTryx Developer App",
@@ -28,36 +27,16 @@ const cardsData = [
       "Track deal progress",
       "Analytics dashboard"
     ],
-    appType: "DEVELOPER" as const
+    appType: "DEVELOPER" as const,
+    link: "https://play.google.com/store/apps/details?id=com.developer.proptryx_developer&hl=en_IN"
   }
 ] as const;
 
-interface DownloadLoadingState {
-  OCCUPIER: boolean;
-  DEVELOPER: boolean;
-}
-
 const DownloadApp = () => {
-  const [downloadLoading, setDownloadLoading] = useState<DownloadLoadingState>({
-    OCCUPIER: false,
-    DEVELOPER: false,
-  });
-
-  const handleAppDownload = async (type: "OCCUPIER" | "DEVELOPER") => {
-    setDownloadLoading((prev) => ({ ...prev, [type]: true }));
-    
-    try {
-      const result = await appDownloadServices.download(type);
-      
-      if ("url" in result && result.url) {
-        window.location.href = result.url;
-      } else {
-        toast.error("Failed to download the app.");
-      }
-    } catch (error) {
-      toast.error("Failed to download the app.");
-    } finally {
-      setDownloadLoading((prev) => ({ ...prev, [type]: false }));
+  const handleDownloadRedirect = (appType: 'OCCUPIER' | 'DEVELOPER') => {
+    const card = cardsData.find((c) => c.appType === appType);
+    if (card?.link) {
+      window.open(card.link, '_blank', 'noopener,noreferrer');
     }
   };
 
@@ -92,20 +71,10 @@ const DownloadApp = () => {
                 <Button
                   variant="black"
                   className='w-fit mt-3 md:mt-4'
-                  onClick={() => handleAppDownload(card.appType)}
-                  disabled={downloadLoading[card.appType]}
+                  onClick={() => handleDownloadRedirect(card.appType)}
                 >
-                  {downloadLoading[card.appType] ? (
-                    <>
-                      Downloading
-                      <Loader2 className="w-5 h-5 animate-spin ml-2" />
-                    </>
-                  ) : (
-                    <>
-                      Download App
-                      <Download className="w-5 h-5 ml-2" />
-                    </>
-                  )}
+                  Download App
+                  <Download className="w-5 h-5 ml-2" />
                 </Button>
               </CardContent>
             </Card>

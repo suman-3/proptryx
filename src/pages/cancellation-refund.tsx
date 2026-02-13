@@ -17,7 +17,7 @@ export const CancellationRefundsPage = () => {
 
           {/* Introduction */}
           <ListTextPrivacy
-            title="We thank you for your purchase from https://proptryx.com, operated by PROPTRYX RE OPC PVT. LTD"
+            title="We thank you for your purchase from PropTryx, operated by PROPTRYX RE OPC PVT. LTD"
             description="We request you to carefully read the policies, terms, and procedures outlined below, as they contain important information regarding your rights and responsibilities in relation to any purchase made by you (the “Customer”) through our Website, unless expressly stated otherwise in a specific product description or promotional offer."
             description1="This CANCELLATION AND REFUNDS POLICY governs the cancellation, return, and refund of orders placed on the Website."
           />

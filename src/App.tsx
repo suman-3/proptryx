@@ -3,7 +3,7 @@ import Home from "./pages/home";
 import Contact from "./pages/contact";
 import About from "./pages/about";
 import { PrivacyPolicyPage } from "./pages/privacy";
-import { TermsConditionsPage } from "./pages/terms";
+import { TermsOfServicePage } from "./pages/terms";
 import { CancellationRefundsPage } from "./pages/cancellation-refund";
 
 function App() {
@@ -14,7 +14,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
-        <Route path="/terms-conditions" element={<TermsConditionsPage />} />
+        <Route path="/terms-of-service" element={<TermsOfServicePage />} />
         <Route path="/cancellation-refund" element={<CancellationRefundsPage/>} />
       </Routes>
     </>

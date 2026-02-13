@@ -43,9 +43,9 @@ const Footer = () => {
           </Link>
           <Link
             className="font-manrope text-sm md:text-md md:hidden -mt-1"
-            to={"/terms-conditions"}
+            to={"/terms-of-service"}
           >
-            Terms & Conditions
+            Terms Of Service
           </Link>
           <Link
             className="font-manrope text-sm md:text-md md:hidden -mt-1"
@@ -70,9 +70,9 @@ const Footer = () => {
           <Separator className="bg-dull w-px h-6 hidden md:block" />
           <Link
             className="font-manrope text-sm md:text-md hidden md:block"
-            to={"/terms-conditions"}
+            to={"/terms-of-service"}
           >
-            Terms & Conditions
+            Terms Of Service
           </Link>
           <Separator className="bg-dull w-px h-6 hidden md:block" />
           <Link

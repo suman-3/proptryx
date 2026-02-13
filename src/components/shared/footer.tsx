@@ -47,6 +47,12 @@ const Footer = () => {
           >
             Terms & Conditions
           </Link>
+          <Link
+            className="font-manrope text-sm md:text-md md:hidden -mt-1"
+            to={"/cancellation-refund"}
+          >
+            Cancellation & Refunds
+          </Link>
         </div>
 
         {/* Bottom Section - Copyright & Social */}
@@ -54,7 +60,7 @@ const Footer = () => {
           <p className="text-xs md:text-sm lg:text-base font-normal font-manrope text-black/80 text-center leading-relaxed">
             © 2026 PropTryx. All rights reserved.
           </p>
-          <Separator className="bg-dull w-[50%] h-px mt-0.5 hidden md:block" />
+          <Separator className="bg-dull w-[40%] h-px mt-0.5 hidden md:block" />
           <Link
             className="font-manrope text-sm md:text-md hidden md:block"
             to={"/privacy-policy"}
@@ -67,6 +73,13 @@ const Footer = () => {
             to={"/terms-conditions"}
           >
             Terms & Conditions
+          </Link>
+          <Separator className="bg-dull w-px h-6 hidden md:block" />
+          <Link
+            className="font-manrope text-sm md:text-md hidden md:block"
+            to={"/cancellation-refund"}
+          >
+            Cancellation & Refunds
           </Link>
         </div>
       </div>
